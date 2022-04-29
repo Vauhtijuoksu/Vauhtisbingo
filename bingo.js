@@ -68,72 +68,10 @@ let unlocks = [
     [false, false, false, false, false],
     [false, false, false, false, false]
 ]
+const numbers = 75
 
-
-
-var choises = [
-    "Bongaa juna!",
-    "Bongaa norppa!",
-    "Bongaa kuutti!",
-    "Lahjoita rahea norpille!",
-    "slotti nukkuu",
-    "Näe epäonnistunut HEL-bounce (Ghostrunner)",
-    '"norppaJAM:s in the chat"',
-    "Peli crashaa",
-    "Onnittele uudesta Omasta Ennätyksestä",
-    "Katso Bubble Bobble!",
-    "Koe out of bounds-elämys",
-    "Katso 3+ tunnin runi alusta loppuun",
-    "Todista kun viaton laatikko rikotaan",
-    "Todista spagettia",
-    "Seuraa Vauhtijuoksua somessa",
-    "Chattaile 04:00 - 06:00",
-    "1337",
-    "Speedrunnaa ite!",
-    "Katso yli 5 runia",
-    "Mäntä litistää pelaajan",
-    "Teknisiä ongelmia",
-    "Postaa tägillä #Vauhtista",
-    '"F"',
-    "It's a me, Mario!",
-    "Veikkaa chatissa kisan voittajaa",
-    '"GAME OVER"',
-    "Pulssi Highscore!",
-    "Cosplay",
-    '"tää oli täysin laskelmoitua"',
-    "Erittäin hyvä RNG",
-    "Erittäin huono RNG",
-    "Yli 100e lahjoitus!",
-    "Unskippable cutscene",
-    "Pene keittää pastat",
-    "Vauhtisbiisi",
-    "Ananas",
-    "Huutista Glukoosille",
-    "Heppa sekoo",
-    "Hauska Lahjoitusviesti",
-    "Epävideopeli",
-    "Sohva bäckseattaa",
-    "Iskälle terkkuja",
-    "Pärinäjuoma hörps",
-    '"Ekalla!"',
-    "Sininen Robottipoika",
-    "Kuolee Bossiin",
-    "Nostalgiä pärinät",
-    "Joku ei osaa käyttää kannustimia",
-    "Todista kannustin kontenttia",
-    ">= 100%",
-    "Karhu palloon! (Katamari)",
-    "Palikoita riviin",
-    "Quick kill!",
-    '"Frame perfect"',
-    "Extra content!",
-    "Aku Aku",
-    "Bossi ei kiinnosta",
-    "Kyseenalainen dialogi",
-    "Pelaaja haukottelee norppaSleeper"
-]
 // Damage boost
-var seed = 6186;
+var seed = 4186;
 function random() {
     var x = Math.sin(seed++) * 10000;
     return x - Math.floor(x);
@@ -160,6 +98,18 @@ function set_nametext(s){
 
 function generate(){
     let html = ""
+    let choises = []
+    let num = 0
+    for (let i = 0; i < 5; i ++) {
+        let pool = []
+        for (let j = 0; j < numbers/5; j ++) {
+            num += 1
+            pool.push(num)
+        }
+        choises.push(pool)
+    }
+    console.log(choises)
+
     for (var row = 0; row < 5; row ++){
         html += "<div class='board-row'>"
         for (var cell = 0; cell < 5; cell ++) {
@@ -172,11 +122,11 @@ function generate(){
             while (rnum === 1) {
                 rnum = random()
             }
-            rnum = Math.floor(choises.length * rnum)
-            let cell_text = choises[rnum]
-            choises.splice(rnum, 1)
+            rnum = Math.floor( choises[cell].length * rnum)
+            let cell_text = choises[cell][rnum]
+            choises[cell].splice(rnum, 1)
             if (row === 2 && cell === 2){
-                cell_text = '"Tätä ei oo koskaan tapahtunu aikasemmin"'
+                cell_text = 'FREE'
             }
             html += cell_text
             html += "</div></div></div>"
