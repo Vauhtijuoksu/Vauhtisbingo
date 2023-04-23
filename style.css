@@ -115,6 +115,7 @@ input{
   padding-bottom: 100%;
 }
 .cell{
+    pointer-events: none;
     position: absolute;
     display: flex;
     align-items: center;
@@ -126,12 +127,15 @@ input{
     word-wrap: break-word;
 }
 .cell div, .hover div{
+    pointer-events: none;
     padding-top: 2px;
     width: 100%;
     font-size: 19px;
 }
 .hover {
+    pointer-events: none;
     position: absolute;
+    user-select: none;
     align-items: center;
     cursor: pointer;
     word-wrap: break-word;
