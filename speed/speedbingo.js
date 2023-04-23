@@ -1,12 +1,15 @@
 let username
 let bstate
+
+const year = "2023"
 $(document).ready(function(){
-    username = localStorage.getItem('username');
-    bstate = JSON.parse(localStorage.getItem('state'));
+    username = localStorage.getItem('username-' + year );
+    bstate = JSON.parse(localStorage.getItem('state-' + year ));
     if (username){
         console.log(username)
         console.log(bstate)
-        seed += stringtonumber(username)
+        seed_spot = username.length + seed
+        //seed += stringtonumber(username)
         set_nametext(username)
         if (!bstate){
             init_state()
@@ -46,7 +49,7 @@ $(document).ready(function(){
             unlocks[row][cell] = true
         }
         bstate["board"][username] = unlocks
-        localStorage.setItem('state', JSON.stringify(bstate));
+        localStorage.setItem('state-' + year , JSON.stringify(bstate));
     });
 });
 
@@ -57,7 +60,7 @@ function init_state(){
 
 function init_user_state(){
     bstate["board"][username] = unlocks
-    localStorage.setItem('state', JSON.stringify(bstate));
+    localStorage.setItem('state-' + year, JSON.stringify(bstate));
 }
 
 
@@ -72,17 +75,14 @@ const numbers = 75
 
 // Damage boost
 var seed = 4186;
-function random() {
-    var x = Math.sin(seed++) * 10000;
-    return x - Math.floor(x);
-}
 
-function stringtonumber(s) {
-    nums = ""
-    for (var c = 0; c < s.length; c++){
-        nums += s.charCodeAt(c).toString()
-    }
-    return parseInt(nums)
+var seed_spot = 0
+function random() {
+    var n = username.charCodeAt(username.charCodeAt(seed_spot % username.length) % username.length)
+    seed_spot += 1
+    var x = Math.sin(seed + n) * 100.0;
+    seed += 1
+    return x - Math.floor(x);
 }
 
 function set_nametext(s){
@@ -117,7 +117,7 @@ function generate(){
             if (unlocks[row][cell]){
                 unlocked = "unlocked"
             }
-            html += "<div class='board-cell r-" + row + " c-" + cell + " "+ unlocked +"'><div class='cell'><div>"
+            html += "<div class='board-cell r-" + row + " c-" + cell + " "+ unlocked +"'><div class='cell speed'><div>"
             let rnum = random()
             while (rnum === 1) {
                 rnum = random()

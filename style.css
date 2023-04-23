@@ -6,14 +6,23 @@
     font-family: 'alagard';
     src:  url('./Alagardplus.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'ubuntu';
+    src:  url('./UbuntuTitling-Bold.ttf') format('truetype');
+}
 body {
     background-image: url("img/bg.png");
+    background-color: black;
     background-position: top center;
-    font-family: misterpixel;
+    font-family: ubuntu;
     font-size: 48px;
-    color: #c3e8f0;
+    color: #2f0028;
     padding: 0;
     margin: 0;
+}
+
+.speedbody{
+    background-color: #decc88;
 }
 
 .header{
@@ -23,9 +32,11 @@ body {
     width: 100%;
 }
 
+
 .header > img{
     margin-left: -50px;
     margin-right: -50px;
+    max-width: 800px;
 }
 
 .content{
@@ -33,35 +44,35 @@ body {
     max-width: 95%;
     margin: auto;
     text-align: center;
-    text-shadow: 2px 2px #18191f;
+    text-shadow: 2px 2px #b1bea7;
 }
 .bingo-text{
-    margin-top: 100px;
+    margin-top: 20px;
     margin-bottom: 50px;
-    font-family: alagard;
+    font-family: ubuntu;
     font-size: 52px;
     display: flex;
     justify-content: space-around;
 }
 input{
-    font-family: misterpixel;
+    font-family: ubuntu;
     font-size: 48px;
 }
 .button{
     display: inline-block;
     margin: 20px;
-    padding: 20px 50px 30px 50px;
-    border: 5px solid #145750;
+    padding: 20px 50px 20px 50px;
+    border: 5px solid #727e15;
     border-radius: 15px;
-    background-color: #219580;
+    background-color: #eaff66;
     user-select: none;
     cursor: pointer;
 }
 
 .disabled{
-    border: 5px solid #682658;
-    background-color: #c93b74;
-    color: #682658;
+    border: 5px solid #d72b3f;
+    background-color: #df5e6d;
+    color: #d72b3f;
     cursor: auto;
 }
 
@@ -82,13 +93,20 @@ input{
     justify-content: space-around;
 }
 .board-cell{
-    background-color: rgba(3, 9, 39, 0.7);
+    background-color: rgba(241, 238, 234, 0.7);
     position: relative;
     width: 20%;
     margin: 5px;
+    border: solid 3px #2f0028;
+    border-radius: 5px;
 }
 .unlocked{
-    background-color: rgba(99, 199, 181, 0.7);
+    background: url("img/cellbg.png");
+    background-size: contain;
+    background-position: top center;
+    background-attachment: fixed;
+    color: #e6f5d8;
+    text-shadow: 2px 2px #2f0028;
 }
 
 .board-cell:after {
@@ -97,45 +115,99 @@ input{
   padding-bottom: 100%;
 }
 .cell{
-  position: absolute;
+    position: absolute;
     display: flex;
     align-items: center;
-  width: 98%;
-  height: 98%;
+    width: 98%;
+    height: 98%;
     margin: 1%;
     user-select: none;
     cursor: pointer;
+    word-wrap: break-word;
 }
-.cell div{
+.cell div, .hover div{
+    padding-top: 2px;
     width: 100%;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 19px;
 }
+.hover {
+    position: absolute;
+    align-items: center;
+    cursor: pointer;
+    word-wrap: break-word;
+    display: none;
+    font-size: 19px;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    color: white;
+}
+
+.clicked{
+    background-color: rgba(255, 206, 141, 0.7);
+    animation-name: hover_color;
+    animation-duration: 2s;
+}
+
+.show_hover{
+    background: rgba(43, 132, 165, 0.7);
+    color: #e6f5d8;
+    text-shadow: 2px 2px #2f0028;
+}
+.show_hover > .hover{
+    display: flex;
+}
+.show_hover > .cell{
+    display: none;
+}
+
+
+@keyframes hover_color {
+  from {background-color: rgba(255, 231, 202, 0.7);}
+  to {background-color: rgba(121, 66, 16, 0.7);}
+}
+
+
+.speed div{
+    width: 100%;
+    font-size: 56px;
+    line-height: 56px;
+}
+
+
 @media only screen and (max-width: 700px) {
 
     .cell div {
         font-size: 22px;
-        line-height: 21px;
+    }
+    .speed div {
+        font-size: 40px;
     }
 }
 @media only screen and (max-width: 600px) {
 
     .cell div {
         font-size: 18px;
-        line-height: 17px;
+    }
+    .speed div {
+        font-size: 32px;
     }
 }
 @media only screen and (max-width: 500px) {
 
     .cell div {
         font-size: 15px;
-        line-height: 14px;
+    }
+    .speed div {
+        font-size: 20px;
     }
 }
 @media only screen and (max-width: 400px) {
 
     .cell div {
         font-size: 12px;
-        line-height: 11px;
+    }
+    .speed div {
+        font-size: 16px;
     }
 }

@@ -1,4 +1,5 @@
 let username
+const year = "2023"
 $(document).ready(function(){
     $("#username").on("input", function(){
         username = $(this).val()
@@ -10,7 +11,7 @@ $(document).ready(function(){
     });
     $("#go").on( "click", function() {
         if (username){
-            localStorage.setItem('username', username);
+            localStorage.setItem('username-' + year, username);
             window.location.href = "speed/play.html";
         }
     });
