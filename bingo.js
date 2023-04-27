@@ -5,8 +5,6 @@ $(document).ready(function(){
     username = localStorage.getItem('username-' + year );
     bstate = JSON.parse(localStorage.getItem('state-' + year + '-' + bid ));
     if (username){
-        console.log(username)
-        console.log(bstate)
         seed_spot = username.length + seed
         set_nametext(username)
         if (!bstate){
@@ -30,18 +28,21 @@ $(document).ready(function(){
 
 
     var interval;
-    $(".board-cell").on('mousedown',function(e) {
+    $(".board-cell").on('mousedown touchstart',function(e) {
+        e.preventDefault();
         if ($(this).hasClass("show_hover")){
             $(this).removeClass("show_hover")
         } else {
             let cell = $(this)
             $(this).addClass("clicked")
             interval = setTimeout(function() {
+                cell.removeClass("clicked")
                 cell.addClass("show_hover")
             },800, cell);
         }
     });
-    $(".board-cell").on('mouseup',function(e) {
+    $(".board-cell").on('mouseup touchend',function(e) {
+        e.preventDefault();
         if ($(this).hasClass("clicked")){
             $(this).removeClass("clicked")
             if (!$(this).hasClass("show_hover")){
@@ -51,18 +52,25 @@ $(document).ready(function(){
         clearInterval(interval);
     });
     $(".board-cell").on('mouseout',function(e) {
+        e.preventDefault();
         $(this).removeClass("clicked")
         clearInterval(interval);
     });
-    $(document).on('mousedown',function(e)  {
+    $(document).on('mousedown touchstart',function(e)  {
+        e.preventDefault();
         $('.show_hover').removeClass("show_hover");
     });
 
     if (Object.keys(bg_colors).length > 0){
         set_bg_color()
     }
+    $("#closeguide").on('mousedown touchstart',function(e) {
+        e.preventDefault();
+        $("#fillguide").hide();
+    });
 
 });
+
 
 function set_bg_color(){
 
@@ -114,6 +122,7 @@ function unlock(c){
 }
 
 function init_state(){
+    $('#fillguide').show()
     bstate = {"board": {}}
     init_user_state()
 }

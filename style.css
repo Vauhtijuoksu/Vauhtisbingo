@@ -21,6 +21,45 @@ body {
     margin: 0;
 }
 
+#fillguide{
+    width: 760px;
+    max-width: 90%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border: solid 3px #2f0028;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    box-sizing: border-box;
+    font-size: 30px;
+    text-align: center;
+    display: none;
+    animation-timing-function: ease-in-out;
+    animation-name: slide-to-view;
+    animation-duration: 1s;
+}
+
+@keyframes slide-to-view {
+  from {top: 0%}
+  to {top: 50%}
+}
+
+#closeguide{
+    text-decoration: underline;
+    color: #00c4fe;
+    font-size: 40px;
+    margin-top: 20px;
+    padding: 0 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+#bottomtext{
+    margin-top: 10px;
+    font-size: 30px;
+    opacity: 70%;
+}
 .speedbody{
     background-color: #decc88;
 }
@@ -36,7 +75,8 @@ body {
 .header > img{
     margin-left: -50px;
     margin-right: -50px;
-    max-width: 800px;
+    width: 800px;
+    max-width: 95%;
 }
 
 .content{
@@ -99,11 +139,12 @@ input{
     margin: 5px;
     border: solid 3px #2f0028;
     border-radius: 5px;
+    cursor: pointer;
 }
 .unlocked{
     background: url("img/cellbg.png");
-    background-size: contain;
-    background-position: top center;
+    background-size: cover;
+    background-position: center center;
     background-attachment: fixed;
     color: #e6f5d8;
     text-shadow: 2px 2px #2f0028;
@@ -131,6 +172,7 @@ input{
     padding-top: 2px;
     width: 100%;
     font-size: 19px;
+    line-height: 18px;
 }
 .hover {
     pointer-events: none;
@@ -140,7 +182,6 @@ input{
     cursor: pointer;
     word-wrap: break-word;
     display: none;
-    font-size: 19px;
     height: 100%;
     width: 100%;
     z-index: 100;
@@ -179,39 +220,69 @@ input{
 }
 
 
+@media only screen and (max-width: 800px) {
+
+    .cell div, .hover div{
+        font-size: 17px;
+        line-height: 16px;
+    }
+    .speed div {
+        font-size: 48px;
+    }
+}
 @media only screen and (max-width: 700px) {
 
-    .cell div {
-        font-size: 22px;
+    .cell div, .hover div{
+        font-size: 15px;
+        line-height: 14px;
     }
     .speed div {
         font-size: 40px;
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
 
-    .cell div {
-        font-size: 18px;
+    .cell div, .hover div{
+        font-size: 13px;
+        line-height: 12px;
     }
     .speed div {
         font-size: 32px;
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 560px) {
 
-    .cell div {
-        font-size: 15px;
+    .cell div, .hover div {
+        font-size: 11px;
+        line-height: 10px;
     }
+
+    .speed div {
+        font-size: 26px;
+    }
+}
+@media only screen and (max-width: 480px) {
+
+    .cell div, .hover div {
+        font-size: 10px;
+        line-height: 9px;
+    }
+
     .speed div {
         font-size: 20px;
     }
 }
+
 @media only screen and (max-width: 400px) {
 
-    .cell div {
-        font-size: 12px;
+    .cell div, .hover div {
+        font-size: 8px;
+        line-height: 7px;
     }
+
     .speed div {
-        font-size: 16px;
+        font-size: 18px;
     }
 }
+
+
