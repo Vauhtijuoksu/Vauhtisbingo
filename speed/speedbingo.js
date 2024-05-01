@@ -1,7 +1,7 @@
 let username
 let bstate
 
-const year = "2023"
+const year = "2024"
 $(document).ready(function(){
     username = localStorage.getItem('username-' + year );
     bstate = JSON.parse(localStorage.getItem('state-' + year ));

@@ -1,5 +1,5 @@
 let username
-const year = "2023"
+const year = "2024"
 $(document).ready(function(){
     username = localStorage.getItem('username-' + year );
     if (username){
