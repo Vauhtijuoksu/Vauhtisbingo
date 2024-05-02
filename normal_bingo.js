@@ -43,7 +43,7 @@ let choises = [
 ["“Ekalla!“", "Pelaaja pääsee skipin ensimmäisellä yrityksellä."],
 ["Framen tarkka temppu", "Frame perfect eli tempun aikaikkuna on vain yhden ruudunpäivityksen mittainen."],
 ["“Oho“", "Jotain odottamatonta tapahtuu ja pelaaja reagoi asianmukaisesti."],
-["Täytä palautekysely", "Käy antamassa palautetta Vauhtijuoksu 2023 -tapahtumasta!"],
+["Täytä palautekysely", "Käy antamassa palautetta Vauhtijuoksu 2024 -tapahtumasta!"],
 ["En ymmärrä tätä kieltä", "Peliä pelataan jollain muulla kuin englannin tai suomen kielellä."],
 ["Peli menee rikki", "Peli menee rikki, jolloin se ei osaa käsitellä sen sisällä tapahtuvaa asiaa."],
 ["*Nappien hakkaamista*", "Pelaajan ohjaimen/näppäimistön hakkaaminen kuuluu striimiin asti."],
