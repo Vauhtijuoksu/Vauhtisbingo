@@ -9,7 +9,7 @@ let bg_colors = {
     23.0: [113,41,71],
     24.0: [113,41,71]
 }
-let mid = ["ROBLOX: get a snack at 4 am: SNACKCORE<br>Any%", "Pe 5.5. Klo: 3:30"]
+let mid = ["BONUSOHJELMA", "Su 5.5. noin klo: 18:00 ->"]
 
 let choises  = [
     ["Super Meat Boy<br>Any%", "Ke 1.5.<Br>Klo: 13:00"],
