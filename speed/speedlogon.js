@@ -1,5 +1,5 @@
 let username
-const year = "2023"
+const year = "2024"
 $(document).ready(function(){
     $("#username").on("input", function(){
         username = $(this).val()
