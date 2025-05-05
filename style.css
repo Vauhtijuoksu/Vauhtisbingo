@@ -148,7 +148,7 @@ input{
     justify-content: space-around;
 }
 .board-cell{
-    background-color: rgba(241, 238, 234, 0.7);
+    background-color: rgba(65, 64, 64, 0.7);
     position: relative;
     width: 20%;
     margin: 5px;
@@ -159,7 +159,7 @@ input{
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    color: #e6f5d8;
+    color: #ffffff;
 }
 
 .board-cell:after {
