@@ -1,5 +1,5 @@
 let username
-const year = "2024"
+const year = "2025"
 $(document).ready(function(){
     username = localStorage.getItem('username-' + year );
     if (username){
@@ -36,12 +36,9 @@ $(document).ready(function(){
 });
 
 let bg_colors = {
-    0.0: [21,43,57],
-    6.0: [21,43,57],
-    9.0: [139,205,250],
-    19.0: [139,205,250],
-    23.0: [21,43,57],
-    24.0: [21,43,57]
+    0.0: [15,15,15],
+    12.0: [25,25,25],
+    24.0: [15,15,15]
 }
 
 function set_bg_color(){

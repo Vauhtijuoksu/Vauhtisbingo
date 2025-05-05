@@ -1,7 +1,7 @@
 let username
 let bstate
 
-const year = "2024"
+const year = "2025"
 $(document).ready(function(){
     username = localStorage.getItem('username-' + year );
     bstate = JSON.parse(localStorage.getItem('state-' + year ));
@@ -74,7 +74,7 @@ let unlocks = [
 const numbers = 75
 
 // Damage boost
-var seed = 4186;
+var seed = 418346;
 
 var seed_spot = 0
 function random() {
