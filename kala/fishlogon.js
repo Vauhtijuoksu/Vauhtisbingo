@@ -20,7 +20,7 @@ $(document).ready(function(){
     $("#go").on( "click", function() {
         if (username){
             localStorage.setItem('username-' + year , username);
-            window.location.href = "play.html";
+            window.location.href = "/kala/play.html";
         }
     });
     $("#go_games").on( "click", function() {
