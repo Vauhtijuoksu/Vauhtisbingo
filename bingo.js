@@ -1,11 +1,11 @@
 let username
 let bstate
-const year = "2025"
+const year = "+2025"
 $(document).ready(function(){
     username = localStorage.getItem('username-' + year );
     bstate = JSON.parse(localStorage.getItem('state-' + year + '-' + bid ));
     if (username){
-        seed_spot = username.length + seed
+        seed_spot = stringToNumber(username) + seed
         set_nametext(username)
         if (!bstate){
             init_state()
@@ -142,13 +142,19 @@ let unlocks = [
 ]
 
 
+function stringToNumber(str){
+  let num = 0
+  for (let i = 0; i < str.length; i++){
+    num += str.charCodeAt(i) * ((i+1) % 3) * 10.1 + str.charCodeAt(i) * 24.3 + i*99.3
+  }
+  return Math.round(num)
+}
+
 
 // Damage boost
 var seed_spot = 0
 function random() {
-    var n = username.charCodeAt(username.charCodeAt(seed_spot % username.length) % username.length)
-    seed_spot += 1
-    var x = Math.sin(seed + n) * 1000.0;
+    var x = Math.sin(seed + seed_spot) * 1000.0;
     seed += 1
     return x - Math.floor(x);
 }
