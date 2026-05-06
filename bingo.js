@@ -1,6 +1,6 @@
 let username
 let bstate
-const year = "+2025"
+const year = "2026"
 $(document).ready(function(){
     username = localStorage.getItem('username-' + year );
     bstate = JSON.parse(localStorage.getItem('state-' + year + '-' + bid ));
@@ -74,6 +74,7 @@ $(document).ready(function(){
 
 function set_bg_color(){
 
+    return // comment out for day/night
     let time = new Date()
     let hour = time.getHours() + time.getMinutes()/60.0;
     let low = 0
