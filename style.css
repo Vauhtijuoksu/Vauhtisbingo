@@ -22,11 +22,53 @@
     font-family: 'bonny';
     src:  url('./Bonny-Variable.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'comicsans';
+    src:  url('./comicSansMs.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'schoolbel';
+    src:  url('./schoolbell.ttf') format('truetype');
+}
+
+body {
+  --v_viininpunainen: #C8385A;
+  --v_punainen: #EE204D;
+  --v_vesimeloni: #FC6C85;
+  --v_malva: #EF98AA;
+  --v_seepia: #A5694F;
+  --v_appelsiini: #FF7538;
+  --v_porkkana: #FFA343;
+  --v_persikka: #FFCFAB;
+  --v_varjo: #8A795D;
+  --v_auringonkajo: #FFCF48;
+  --v_sitruuna: #FDFC74;
+  --v_banaani: #FAE7B5;
+  --v_sademetsa: #17806D;
+  --v_vihrea: #1CAC78;
+  --v_minttu: #45CEA2;
+  --v_omena: #A8E4A0;
+  --v_keskiyo: #1A4876;
+  --v_farkku: #2B6CC4;
+  --v_taivaansini: #1DACD6;
+  --v_vaaleansininen: #80DAEB;
+  --v_munakoiso: #6E5160;
+  --v_luumu: #8E4584;
+  --v_verenpisara: #C364C5;
+  --v_sinisade: #CDA4DE;
+  --v_musta: #232323;
+  --v_avaruus: #414A4C;
+  --v_manaatti: #979AAA;
+  --v_talvio: #C5D0E6;
+  --v_valkoinen: #EDEDED;
+
+}
+
 body {
     background-image: url("img/bg.png");
-    background-color: #6991FB;
+    background-color: var(--v_verenpisara);
     background-position: top center;
-    font-family: 'poppins';
+    font-family: 'comicsans';
     font-size: 48px;
     color: #1E070B;
     padding: 0;
@@ -34,15 +76,15 @@ body {
 }
 
 .toWatch {
-    background-color: #F7A9D4;
+    background-color: var(--v_manaatti);
 }
 
 #fillguide{
     width: 760px;
     max-width: 90%;
-    background-color: #B0C7FD;
+    background-color: var(--v_manaatti);
     padding: 20px;
-    border: solid 3px #253C90;
+    border: solid 3px var(--v_musta);
     border-radius: 15px;
     position: fixed;
     top: 50%;
@@ -77,7 +119,7 @@ body {
     opacity: 70%;
 }
 .speedbody{
-    background-color: #FEE600;
+    background-color: var(--v_sitruuna);
 }
 
 .header{
@@ -87,16 +129,16 @@ body {
     width: 100%;
 }
 a {
-    color: #480C42;
+    color: var(--v_keskiyo);
 }
 a:active {
-    color: #480C42;
-}
-a:hover {
-    color: #A42291;
+    color: var(--v_keskiyo);
 }
 a:visited {
-    color: #480C42;
+    color: var(--v_keskiyo);
+}
+a:hover {
+    color: var(--v_taivaansini);
 }
 
 
@@ -117,30 +159,30 @@ a:visited {
 .bingo-text{
     margin-top: 20px;
     margin-bottom: 50px;
-    font-family: poppins;
+    font-family: schoolbel;
     font-size: 52px;
     display: flex;
     justify-content: space-around;
 }
 input{
-    font-family: poppins;
+    font-family: comicsans;
     font-size: 48px;
 }
 .button{
     display: inline-block;
     margin: 20px;
     padding: 20px 50px 20px 50px;
-    border: 5px solid #4B8556;
+    border: 5px solid var(--v_sademetsa);
     border-radius: 15px;
-    background-color: #B6EAD2;
+    background-color: var(--v_omena);
     user-select: none;
     cursor: pointer;
 }
 
 .disabled{
-    border: 5px solid #4A2C0B;
-    background-color: #BE6716;
-    color: #4A2C0B;
+    border: 5px solid var(--v_viininpunainen);
+    background-color: var(--v_vesimeloni);
+    color: var(--v_viininpunainen);
     cursor: auto;
 }
 
@@ -161,7 +203,7 @@ input{
     justify-content: space-around;
 }
 .board-cell{
-    background-color: #E9A330;
+    background-color: var(--v_sitruuna);
     position: relative;
     width: 20%;
     margin: 5px;
@@ -169,11 +211,11 @@ input{
     border-radius: 10px;
 }
 .unlocked{
-    background: #B6EAD2;
+    background: var(--v_minttu);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    color: #2A4B30;
+    color: var(--v_sademetsa);
 }
 
 .board-cell:after {
@@ -215,15 +257,15 @@ input{
 }
 
 .clicked{
-    background-color: #E9A330;
+    background-color: var(--v_appelsiini);
     animation-name: hover_color;
     animation-duration: 2s;
 }
 
 .show_hover{
-    background: #B0C7FD;
-    color: #1E070B;
-    text-shadow: 1px 1px #6991FB;
+    background: var(--v_persikka);
+    color: var(--v_musta);
+    text-shadow: 1px 1px var(--v_talvio);
 }
 .show_hover > .hover{
     display: flex;
@@ -234,8 +276,8 @@ input{
 
 
 @keyframes hover_color {
-  from {background-color: #E16F4A;}
-  to {background-color: #FEE600;}
+  from {background-color: var(--v_appelsiini);}
+  to {background-color: var(--v_verenpisara);}
 }
 
 

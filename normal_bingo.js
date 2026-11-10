@@ -1,4 +1,4 @@
-let seed = 642689
+let seed = 4636424353
 let bid = "normal"
 
 let bg_colors = {
@@ -9,7 +9,6 @@ let bg_colors = {
 let mid = ['"Tätä ei oo koskaan tapahtunu aikasemmin"', "Voiko edes puhua speedrun-maratonista jos tätä ei kuulu?"]
 
 let choises = [
-  ["Lahjoita Sairaalaklovneille!", "Lahjoita rahaa hyväntekeväisyyteen Vauhtijuoksun nettisivujen kautta."],
   ["Chatti bäckseattaa", "Chatti kertoo asiantuntijana, miten jokin asia pitäisi tehdä."],
   ["Uusi Oma Ennätys", "Pelaaja saa uuden personal bestin eli PB:n eli oman ennätyksen!"],
   ["Toistuva voiceline pelissä", "Esim. jokin pelin NPC:stä toistaa samaa puheenpätkää useaan otteeseen."],
@@ -27,7 +26,7 @@ let choises = [
   ["Erittäin huono RNG", "Pelaajalla käy erittäin huono tuuri jonkin asian suhteen."],
   ["Yli 100€ lahjoitus!", "Joku lahjoittaa yli 100€!"],
   ["Unskippable cutscene", "Pelissä tulee videonpätkä, jota ei yksinkertaisesti pysty skippaamaan."],
-  ["Pelleillään!", "Striimissä tapahtuu jotain sirkusteemaista."],
+  ["Lahjoita hyväntekeväisyyteen!", "Lahjoita jollekin Vauhtijuoksun kohteista!!"],
   ["Vauhtisbiisi", "Striimissä soitetaan Vauhtisbiisiä eli 'Deerboy - Medley No.1 (Vauhtijuoksu Edit)'."],
   ["Näe resetti", "Pelaajalla mokaa ja joutuu sen vuoksi aloittamaan suorituksen alusta."],
   ["Joku syö striimissä", "Pelaaja tai Toimitsija on eksynyt keittiöstä striimin puolelle syömään."],
@@ -46,18 +45,18 @@ let choises = [
   ["Bongaa energiajuoma", "Pelaaja, Toimitsija tai yleisön edustaja nauttii vauhdikasta juomaa."],
   ["Ja seuraavaksi mainoksia", "Katso kaupalliset tiedotteet."],
   ["Bossi ei kiinnosta", "Päävihu kuolee sekunneissa tai se ohitetaan kokonaan."],
-  ["Moogle ruudussa", "Bongaa Final Fantasyistä tuttu pallonaama pelissä."],
+  ["Myy bongattu", "Näe maailmankuulu Pikku Myy pelissä!"],
   ["Heppatyttöpeli", "Pelissä heppaillaan, taikatyttöillään tai muuten ollaan maagisia heppatyttöjä."],
-  ["Pokémon palloon!", "Todista, kun pelissä napataan taskumonsteri."],
+  ["Kaikki kerätään kaikki kerätään!", "Todista, kun pelissä napataan taskumonsteri eli pokémon."],
   ["Metroid ruudussa", "Bongaa metroid, eikun Samus!"],
   ["Game Over!", "Joku häviää pelin, kuolee tai ottaa muuten pataan kesken runin."],
   ["Peli rikotaan tahallaan", "Pelissä mennään seinien läpi, syötetään koodia tai muuten säretään jotain runia varten."],
   ["Kisaillaan!", "Kaksi tai useampi pelaajaa taistelee voitosta keskenään."],
   ["Konsoli kolisee", "Peli pelataan jollain muulla laitteella kuin PC:llä."],
   ["Tunnen runnaajan IRL", "Pystyt käyttämän runnaajan etunimeä, koska tunnette oikeassa elämässä."],
-  ["Taiteilua", "Striimissä esitellään piirtotaitoa."],
+  ["Taiteilua", "Striimissä esitellään taiteellista taitoa."],
   ["Ai noin se tehdään", "Pelaaja vetää pelistä kohdan jota et ole itse päässyt läpi."],
-  ["Täytä palautekysely", "Käy antamassa palautetta Vauhtijuoksu-tapahtumasta!"],
+  ["Täytä palautekysely", "Käy antamassa palautetta Vauhtijuoksu-tapahtumasta! !palaute chattiin"],
   ["Yhdessä yläviistoon!", "Pelissä kiivetään korkealle!"],
   ["Penkkiurheilua", "Pelissä urheillaan tai moottoriurheillaan."],
   ["Uusi maailmanennätys!", "Pelaaja saa uuden maailmanennätyksen eli world recordin eli WR:n!"],
@@ -68,13 +67,12 @@ let choises = [
   ["Bongaa Disney-hahmo", "Löydä pelistä Aku Ankka, Mikki Hiiri tai muu tuttu Disney-kaveri."],
   ["Seikkaillaan epäihmisenä", "Pelin päähenkilö on joku muu kuin ihminen."],
   ["Juoksija lupaa lahjoittaa, jos...", "Katso runi, jossa pelaaja lupaa lahjoittaa hyväntekeväisyyteen esimerkiksi jokaisesta kuolemasta."],
-  ["Pumppu pettää", "Katso runi, jossa pelaajalla on sykevyö."],
   ["Bonusohjelmaa!", "Ole paikalla, kun ruudussa on bonusohjelmaa."],
   ["*Nappien hakkaamista*", "Pelaajan ohjaimen/näppäimistön hakkaaminen kuuluu striimiin asti."],
   ["Sohvalla on tilaa", "Katso runi, jolla on enemmän kuin 2 kommentaattoria."],
   ["Counteri ruudulla", "Näe runi, jossa pelaaja pitää kirjaa esim. kuolemista tai kirosanoista."],
   ["Cosplay-tunnelmaa", "Runnaaja tai sohva ilmestyy paikalle pelistä inspiroituneessa asussa."],
-  ["“Oho“", "Jotain odottamatonta tapahtuu ja pelaaja reagoi asianmukaisesti."],
+  ['"Oho"', "Jotain odottamatonta tapahtuu ja pelaaja reagoi asianmukaisesti."],
   ["Juomatauko", "Juoksija ottaa hörpyn kesken runin!"],
   ["Vessatauko", "Runissa on niin pitkä tauko, että ehtisi käydä vessassa."],
   ["Massikeisari", "Juoksijalla on pelissä enemmän rahaa kuin pystyy käyttämään."]
